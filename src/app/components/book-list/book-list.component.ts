@@ -11,16 +11,19 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 export class BookListComponent implements OnInit {
 
-    fullBook;
+    listOfBooks;
 
     constructor(private BookApiService: BookApiService, private route: ActivatedRoute) {}
 
   ngOnInit() {
       this.route.params.subscribe(params => {
           this.BookApiService.getAllBooks().subscribe((resp) => {
-                  this.fullBook = resp.items[0].volumeInfo; ; 
-              console.log(this.fullBook);
-              return this.fullBook ;
+              this.listOfBooks = [];
+              for (let i = 0; i < 10; i++) {
+              let arr = resp.items[i].volumeInfo;
+              this.listOfBooks.push(arr);
+              }
+                  return this.listOfBooks ;
           })
       });
   }

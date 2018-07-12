@@ -17,3 +17,6 @@
 //               var c = this.fullBook.items[2].volumeInfo.authors ; 
 //               var d = this.fullBook.items[2].volumeInfo.publishedDate ; 
 //               var e = this.fullBook.items[2].volumeInfo.description ;
+
+//   this.fullBook = resp.items[i].volumeInfo;  
+
