@@ -3,7 +3,7 @@
     justify-content: center; 
 }
 
-.movie-data {
+.book-data {
   border: 1px solid black;
   margin: 15px;
   padding: 5px;
@@ -11,7 +11,7 @@
   min-height: 500px;
   overflow: hidden;
   border-radius: 1%;
-  border: black 1px;
+  
   box-shadow: 1px, 2px, 4px, 6px, rgba(0, 0, 0, 0.972);
   background: #EBF2FA ; 
 }
