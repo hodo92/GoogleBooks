@@ -29,5 +29,6 @@ export class BookListComponent implements OnInit {
                   return this.listOfBooks ;
           })
       });
+      
   }
 }
