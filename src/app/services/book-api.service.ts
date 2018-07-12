@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../book';
 
-const privateBooks: Book[] = [] ; 
+
 let param=700;  
 
 @Injectable({
@@ -14,10 +14,9 @@ export class BookApiService {
     
     public apiUrl = "https://www.googleapis.com/books/v1/volumes?q="+param ; 
     books: Book = new Book();
-    privateBooks: Book[] = privateBooks;
-
+    
     constructor(private http: HttpClient) { }
-    getAllBooks(): Observable<Book[]> {
-        return this.http.get<Book[]>(this.apiUrl);
+    getAllBooks(): Observable<any> {
+        return this.http.get<any>(this.apiUrl);
    }
 }
