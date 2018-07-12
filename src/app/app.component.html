@@ -1,20 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<mat-toolbar style="background-color:#EBF2FA " >
+    <span fxFlex></span>
+    <button mat-icon-button (click)="openBook()">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARFSURBVHhe7ZzJihVJFIZrpQt157yzWxxw40pQe2G379C0D9MizvgAjo/g8Ay2tiOI+0alVRQcdg6oC/X/0gooUi+n4kTkqZvX+OCHGxkZcf6MyoyM4dadazQajUaj0Wg0GnEsk05Jz6QvIxfXcELimsIg4I/MjFlcUxjPJYLu6VLfk0yNgb0SXrkTw7AaaEwNCOF+rYD9/BvSv98+dkxb2rqe6lgB+/nX55WYtrR1PdWxAoYbKiTcrxUw3FAh4X6tgOGGMhldHzhttD6wMuF+rYDhhgoJ92sFDDeUSesDC2l9YGXC/VoBww0VEu7XChhuKJPWBxbS+sDKhPu1AoYbKiTcrxUw15C1Xpebtuifn+u3GCtgrqF+n1Satuifn+u3GCtguKFCwv1aAcMNFRLu1woYbiiTmesDo2l9YGXC/VoBww0VEu7XChhuKJPWBxbS+sDKhPu1AoYbKiTcrxUw3FAmrQ8spPWBlQn3awUMN1RIuF8rYLihQjZKu759jGHWGjCc1oCFjLEBV0l/SReku9JL6dO8+Myx8xLnrJQGZUwNuEE6Lb2Xki9L7yQaerM0CCnQJKz8CJZLR6Q3UvJzT/pb2idtk1bMi88cOyhxTjr/o3RSoq6qpACTsPKHZr10U8LDZ+mitEVaLJx7WaIsdTBzWSdVw2ogK39IdkhPJOI/lHZLXij7SKIu6qTuKlgNZOUPBXfJU4nY/0irpVLWSNck6qRu0sVYDWTlDwH/LHhbIu7V+XQtqIs/CHXzOBfXbTWQlT8EhyViPpCq3CU9qDM9zsX/mGg1kJVfG4YqbyU6/ZI+z4J/TCQGb+dfOOBl2hrwjEQ83rY5eHzydqbMuS7lxArsMeaFGQYDX+6MrRzIwONzu0QZ7nj3jMUK7DHm5YBELAbAuXh93pco92eXcmAF9hrzwJSLWMwwcvH6PCRR7myXcmAF9hrzcEci1u9dKg+vz/0S5W51KQdWYK8xD68lYuVM1RJen8Si3Ksu5cAK7DXmgSEFsXiZTCL5ydUkiEX+hy7lwApg5dfkp2jA/j5saXohPEbEinyEGS5RLuwR7u/DlqYXspQvEZbMXFiBvcY8sAxPLBZDc/H6LB7GpB/e+a1LfY/XmAf2MIg1qoH0Uv/0039Sgg6daRXHWZrPIdWXw8KpHNsBLlgPOy4t5Y+P7ZQSaTZyqUstnlRXDlckyrgf32nkV4ntSRYUJv2eVw3S72wxfNnEgVmC3TMujkXPoRZU/5eIcYwDswbdStqJY/l9qCV9xqM1654quEvSphIbQbU3ldiZG+LunirYenwsccE8ziVL/PSn6bGlzmrbmtPOWolHjQvnxcKbM2eIw1AlvW0RdVHnTwVfx2C8mhYbEANgZhFM+/pf7fhDIi8NkhFlj0rVv9oxJhhuMGZb+B0ZS5xLmZkbqpTABhBTLxqGDfgXEncY4jPHyOOcRW4Wzc19BVpHFqR1ew+DAAAAAElFTkSuQmCC">
+    </button>
+</mat-toolbar>
+<header style="background-color: #17BEBB">
+    <div class="title" >
+        <h1 class="mat-display-1">
+            Welcome To Google Books Library
+        </h1>
+    </div>
+</header>
+<app-book-list></app-book-list>
