@@ -34,6 +34,7 @@ import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookApiService } from './services/book-api.service';
 
 import { TitlePipe } from './pipes/title.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [
@@ -54,13 +55,13 @@ import { TitlePipe } from './pipes/title.pipe';
         MatIconModule,
         MatCardModule,
         HttpClientInMemoryWebApiModule,
+        RouterModule.forRoot([])
     ],
     declarations: [
         AppComponent,
         AddBookComponent,
         BookListComponent,
         TitlePipe,
-        BookListComponent,
         AddBookComponent,
     ],
     entryComponents: [

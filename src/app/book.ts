@@ -5,7 +5,6 @@ export class Book {
     public title?: string;
     public imgUrl? : string;
     public price? : number;
-    public year? : number;
     public fullDescription?: string;
     constructor() {}
 }
