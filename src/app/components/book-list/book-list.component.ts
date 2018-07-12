@@ -19,8 +19,11 @@ export class BookListComponent implements OnInit {
       this.route.params.subscribe(params => {
           this.BookApiService.getAllBooks().subscribe((resp) => {
               this.listOfBooks = [];
-              for (let i = 0; i < 5; i++) {
+              for (let i = 0; i < 10; i++) {
               let arr = resp.items[i].volumeInfo;
+                  if (arr.imageLinks == null  ){
+                      arr=null; 
+              }else
               this.listOfBooks.push(arr);
               }
                   return this.listOfBooks ;

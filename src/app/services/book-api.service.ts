@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Book } from '../book';
 
-let param = Math.floor((Math.random() * 600) + 1);
+let param = Math.floor((Math.random() * 500) + 1);
 
 @Injectable({
   providedIn: 'root'
