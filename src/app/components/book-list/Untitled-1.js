@@ -20,3 +20,30 @@
 
 //   this.fullBook = resp.items[i].volumeInfo;  
 
+/* <img style width="159px" styly height="225px" */
+
+
+
+
+
+/* .img {
+   max-width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-bottom: 6px ; 
+} */
+
+/* .img img {
+  width: 100%;
+  height: 360px;
+  border: solid 3px black
+
+} */
+
+
+ /* grid-template-columns: 1fr 1fr 1fr; */
+
+//   .item {
+//     flex: 1 0 calc(33.333 % - 20px);
+// }
+

@@ -12,49 +12,52 @@
     </div>
 </div> -->
 
+<div class="flex-container">
+    <!-- check style  -->
+    <div *ngFor="let fullBook of listOfBooks">
 
-<!-- check style  -->
-<div class="component" *ngFor="let fullBook of listOfBooks" >
+        <ul class="align">
+            <li>
+                <figure class='book'>
 
-    <ul class="align">
-        <li>
-            <figure class='book'>
+                    <!-- Front -->
 
-                <!-- Front -->
+                    <ul class='hardcover_front'>
+                        <li>
+                            <div class="coverDesign custom">
+                                <img style width="159px" styly height="225px" src="{{fullBook.imageLinks.thumbnail}}">
+                            </div>
+                        </li>
+                        <li></li>
+                    </ul>
 
-                <ul class='hardcover_front'>
-                    <li>
-                        <div class="coverDesign custom">
-                                <img style width="159px" styly height="245px" src="{{fullBook.imageLinks.thumbnail}}">
-                        </div>
-                    </li>
-                    <li></li>
-                </ul>
+                    <!-- Pages -->
 
-                <!-- Pages -->
+                    <ul class='page'>
 
-                <ul class='page'>
-                   
-                    <li>
-                        <br><b> Category:</b>{{fullBook.categories}}
-                       <br> <b> Published Date:</b> {{fullBook.publishedDate}}
-                    </li>
-                </ul>
-                <!-- Back -->
+                        <li>
+                            <br>
+                            <b> Category:</b>{{fullBook.categories}}
+                            <br>
+                            <b> Published Date:</b> {{fullBook.publishedDate}}
+                        </li>
+                    </ul>
+                    <!-- Back -->
 
-                <ul class='hardcover_back'>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <ul class='book_spine'>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <figcaption>
-                    <h1>{{fullBook.title}}</h1>
-                    <span>By Author {{fullBook.authors}}</span>
-                </figcaption>
-            </figure>
-        </li>
-    </ul>
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <figcaption>
+                        <h1>{{fullBook.title}}</h1>
+                        <span>By Author {{fullBook.authors}}</span>
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+    </div>
 </div>
