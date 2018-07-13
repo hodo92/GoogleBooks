@@ -21,9 +21,10 @@ export class BookListComponent implements OnInit {
               this.listOfBooks = [];
               for (let i = 0; i < 10; i++) {
               let arr = resp.items[i].volumeInfo;
-                  if (arr.imageLinks == null  ){
+                  if (arr.imageLinks == null){
                       arr=null; 
-              }else
+                  } 
+              else
               this.listOfBooks.push(arr);
               }
                   return this.listOfBooks ;
