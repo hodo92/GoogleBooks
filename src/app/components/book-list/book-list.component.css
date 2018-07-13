@@ -269,6 +269,7 @@ a {
     transition-property: transform;
     transition-timing-function: ease;
     width: 100%;
+    background-color: #FFFBEC;
 }
 .page > li:nth-child(1) {
     transition-duration: 0.6s;
@@ -402,6 +403,9 @@ figcaption {
     width: 320px;
 }
 
+*{
+    background-color: #F1FFFA; 
+}
 
 @media only screen and (max-width: 650px) {
    .flex-container{
