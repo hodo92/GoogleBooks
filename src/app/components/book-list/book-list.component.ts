@@ -25,11 +25,15 @@ export class BookListComponent implements OnInit {
                       arr=null; 
                   } 
                   else {
-                      if (arr.authors == null || arr.publishedDate == null || arr.categories == null  ){
+                      if (arr.authors == null){
                           arr.authors ="Unknown";
+                      }
+                      if (arr.publishedDate == null){
                           arr.publishedDate = "Unknown";
+                      }
+                       if (arr.categories == null){
                           arr.categories = "Unknown";
-                      }   
+                       }
               this.listOfBooks.push(arr);
                   }
               }
