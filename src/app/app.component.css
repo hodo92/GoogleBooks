@@ -1,7 +1,12 @@
 
+ body { 
+     margin:0; 
+    }  
+
+
 .mat-toolbar-row, .mat-toolbar-single-row {
     height: 85px;
-    margin: 0px ; 
+    
 }
 
 .mat-icon-button {
@@ -24,9 +29,7 @@ header {
     .mat-display-1 {
       margin: 0 0 30px;
     }
-    .mat-h2 {
-      margin: 0;
-    }
+    
 
 @media only screen and (max-width: 650px) {
     img {
