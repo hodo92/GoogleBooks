@@ -24,8 +24,14 @@ export class BookListComponent implements OnInit {
                   if (arr.imageLinks == null){
                       arr=null; 
                   } 
-              else
+                  else {
+                      if (arr.authors == null || arr.publishedDate == null || arr.categories == null  ){
+                          arr.authors ="Unknown";
+                          arr.publishedDate = "Unknown";
+                          arr.categories = "Unknown";
+                      }   
               this.listOfBooks.push(arr);
+                  }
               }
                   return this.listOfBooks ;
           })
