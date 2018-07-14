@@ -414,6 +414,13 @@ figcaption {
       text-overflow: ellipsis;
 }
 
+.small > * {
+/* margin: 60px ; */
+background-color:#FFFBEC;
+}
+
+ button {border: hidden;}
+
 @media only screen and (max-width: 650px) {
    .flex-container{
     display: flex;
