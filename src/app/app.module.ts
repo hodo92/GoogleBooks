@@ -35,7 +35,7 @@ import { BookApiService } from './services/book-api.service';
 
 import { TitlePipe } from './pipes/title.pipe';
 import { RouterModule } from '@angular/router';
-import { BookModalComponent } from './components/book-modal/book-modal.component';
+
 
 @NgModule({
     imports: [
@@ -64,13 +64,10 @@ import { BookModalComponent } from './components/book-modal/book-modal.component
         BookListComponent,
         TitlePipe,
         AddBookComponent,
-        BookModalComponent,
     ],
     entryComponents: [
         AddBookComponent,
         BookListComponent,
-        BookModalComponent
-        
     ],
     providers: [
         TitlePipe,

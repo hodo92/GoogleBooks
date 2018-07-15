@@ -23,8 +23,16 @@ export class BookApiService {
     getAllBooks(): Observable<any> {
         return this.http.get<any>(this.apiUrl);
    }
+   
     get booksAsArray(): Book[] {
         return this._books.value
     }
-    
+
+    /**
+     * synchronize DB with books BehaviourSubject*/
+    private syncDB(data: Book[]): void {
+        this.http.post('commands/resetDb', this._books.value).subscribe(() => {
+            this._books.next(data)
+        });
+    }
 }
