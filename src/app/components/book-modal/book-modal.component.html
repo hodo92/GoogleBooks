@@ -1,3 +1,68 @@
-<p>
-  book-modal works!
-</p>
+<h1 mat-dialog-title>Edit Book</h1>
+<div mat-dialog-content fxLayout="row">
+    <form fxFlex="60" fxFlexOrder="2" fxLayout="column" [formGroup]="bookFormGroup"
+        novalidate>
+        <mat-form-field>
+            <input tabindex="0" matInput formControlName="title" appDuplicateTitle
+                placeholder="Title">
+            <mat-error *ngIf="bookFormGroup.get('title').hasError('required')">
+                Title required
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('title').hasError('pattern')">
+                Only english alphabet, spaces, ,. are allowed
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('title').hasError('duplicateTitle')">
+                Title with the same name already exists
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="author" placeholder="Author">
+            <mat-error *ngIf="bookFormGroup.get('author').hasError('required')">
+                Author required
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('author').hasError('pattern')">
+                Only english alphabet, spaces, ,. are allowed
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="created_date" placeholder="Created" [matDatepicker]="myDatepicker">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+            <mat-error *ngIf="bookFormGroup.get('created_date').hasError('required')">
+                Created date required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="book_image" placeholder="Image Url">
+            <mat-error *ngIf="bookFormGroup.get('book_image').hasError('required')">
+                Image url required
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('book_image').hasError('pattern')">
+                Image url have to be a valid url
+            </mat-error>
+        </mat-form-field>
+
+    </form>
+</div>
+<div mat-dialog-actions>
+    <span fxFlex></span>
+    <span *ngIf="editMode">
+        <button mat-icon-button color="accent" (click)="saveBook()" [disabled]="!bookFormGroup.valid">
+            <mat-icon>done</mat-icon>
+        </button>
+        <button *ngIf="data" mat-icon-button color="accent" (click)="revertChanges()">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </span>
+    <button *ngIf="!editMode && (!!data)" mat-icon-button color="accent" (click)="editBook()">
+        <mat-icon>edit</mat-icon>
+    </button>
+    <button *ngIf="data" mat-icon-button color="accent" (click)="deleteBook()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
+
+

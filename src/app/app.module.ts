@@ -69,6 +69,7 @@ import { BookModalComponent } from './components/book-modal/book-modal.component
     entryComponents: [
         AddBookComponent,
         BookListComponent,
+        BookModalComponent
         
     ],
     providers: [

@@ -1,32 +1,24 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'title'
+    name: 'title'
 })
 export class TitlePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
-  }
+    /**
+     * removes special chars and capitalize each word
+     * @param value string to manipulate
+     * @param args optional arguments
+     * */
+    transform(value: any, args?: any): any {
+        if (value) {
+            // removing special chars => splitting to words => capitalize each word => join the sentence
+            return value.replace(/[^A-Za-z() 0-9,'.]/g, '').split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+
+        }
+        return value;
+    }
+
 
 }
-
-
-// import { Pipe, PipeTransform } from '@angular/core';
-// import { Movie } from './movie';
-
-// @Pipe({
-//     name: 'filter'
-// })
-// export class FilterPipe implements PipeTransform {
-//     transform(items: Movie[], currentSearchTerm: string): Movie[] {
-//         if (!items) { return []; }
-//         if (!currentSearchTerm) { return items; }
-
-//         currentSearchTerm = currentSearchTerm.toLowerCase();
-
-//         return items.filter(it => {
-//             return it.title.toLowerCase().includes(currentSearchTerm);
-//         });
-//     }
-// }

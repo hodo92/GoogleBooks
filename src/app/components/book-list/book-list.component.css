@@ -51,6 +51,7 @@ ul {
     list-style: none outside none;
     margin: 0;
     padding: 0;
+    
 }
 
 a {
@@ -419,6 +420,10 @@ figcaption {
 background-color:#FFFBEC;
 }
 
+.small{
+    background-color:#FFFBEC;
+    margin: 20px;
+}
  button {border: hidden;}
 
 @media only screen and (max-width: 650px) {

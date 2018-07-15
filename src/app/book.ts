@@ -1,5 +1,5 @@
 export class Book {
-    public _id? : string;
+    public _id? : number;
     public AauthorName?: string;
     public publishedDate: number; 
     public title?: string;

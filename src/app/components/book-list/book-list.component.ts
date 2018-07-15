@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/book'; 
 import { BookApiService } from 'src/app/services/book-api.service'; 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { BookModalComponent } from 'src/app/components/book-modal/book-modal.component';
+
 
 @Component({
   selector: 'app-book-list',
@@ -13,7 +16,7 @@ export class BookListComponent implements OnInit {
 
     listOfBooks;
 
-    constructor(private BookApiService: BookApiService, private route: ActivatedRoute) {}
+    constructor(private BookApiService: BookApiService, private route: ActivatedRoute, public dialog: MatDialog) {}
 
   ngOnInit() {
       this.route.params.subscribe(params => {
@@ -42,4 +45,9 @@ export class BookListComponent implements OnInit {
       });
       
   }
+   
+       openDialog(book: Book): void {
+           let dialogRef = this.dialog.open(BookModalComponent, {});
+   }
+   
 }
