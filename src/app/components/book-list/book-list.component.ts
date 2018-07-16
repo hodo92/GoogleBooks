@@ -3,7 +3,7 @@ import { Book } from 'src/app/book';
 import { BookApiService } from 'src/app/services/book-api.service'; 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-
+import { DeleteBookComponent } from 'src/app/components/delete-book/delete-book.component';
 
 
 @Component({
@@ -46,8 +46,8 @@ export class BookListComponent implements OnInit {
       
   }
    
-    //    openDialog(book: Book): void {
-    //        let dialogRef = this.dialog.open(BookModalComponent, {});
-//    }
+       openDialog(book: Book): void {
+           let dialogRef = this.dialog.open(DeleteBookComponent, {});
+   }
    
 }
