@@ -36,6 +36,7 @@ import { BookApiService } from './services/book-api.service';
 import { TitlePipe } from './pipes/title.pipe';
 import { RouterModule } from '@angular/router';
 import { DeleteBookComponent } from 'src/app/components/delete-book/delete-book.component';
+import { EditBookComponent } from './components/edit-book/edit-book.component';
 
 
 @NgModule({
@@ -66,11 +67,13 @@ import { DeleteBookComponent } from 'src/app/components/delete-book/delete-book.
         TitlePipe,
         AddBookComponent,
         DeleteBookComponent,
+        EditBookComponent,
     ],
     entryComponents: [
         AddBookComponent,
         BookListComponent,
-        DeleteBookComponent
+        DeleteBookComponent,
+        EditBookComponent
     ],
     providers: [
         TitlePipe,

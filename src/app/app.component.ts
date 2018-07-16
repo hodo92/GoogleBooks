@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit, Inject } from '@angular/core';
+import { BookApiService } from 'src/app/services/book-api.service';
+import { Book } from 'src/app/book';
+import { MatDialog,MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { AddBookComponent } from 'src/app/components/add-book/add-book.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +13,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  
+
+    constructor(private bookApiService: BookApiService, public dialog: MatDialog) { }
+    
+    ngOnInit() { }
+
+    openDialog(book: Book): void {
+        let dialogRef = this.dialog.open(AddBookComponent, {
+        });
+    }
+
 }
