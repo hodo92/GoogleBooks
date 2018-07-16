@@ -20,10 +20,6 @@ export class DeleteBookComponent implements OnInit {
   }
 
     deleteBook(book: Book){
-      
+        // this.dialogRef.close('the book deleted');
     }
-  
-    close(){
-      this.dialogRef.close();
-  }
 }

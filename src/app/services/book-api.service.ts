@@ -16,8 +16,6 @@ export class BookApiService {
     
     public apiUrl = "https://www.googleapis.com/books/v1/volumes?q="+param ; 
     books: Book = new Book();
-    
-
 
     constructor(private http: HttpClient) { }
     getAllBooks(): Observable<any> {
