@@ -48,3 +48,5 @@
 // }
 
 // mat - raised - button(click)="openDialog()"
+
+// this.privateBooks = this.bookApiService.getAllBooks();

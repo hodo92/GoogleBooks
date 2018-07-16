@@ -47,7 +47,9 @@ export class BookListComponent implements OnInit {
   }
    
        openDialog(book: Book): void {
-           let dialogRef = this.dialog.open(DeleteBookComponent, {});
+           let dialogRef = this.dialog.open(DeleteBookComponent, {
+               data: this.listOfBooks 
+           });
    }
    
 }
