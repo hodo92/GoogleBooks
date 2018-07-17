@@ -24,7 +24,7 @@ export class BookListComponent implements OnInit {
 
     }
     delete(book: Book): void {
-        console.log(book)
+        // console.log(book)
         let dialogRef = this.dialog.open(DeleteBookComponent, {
             data: book
         });

@@ -32,8 +32,8 @@ export class BookApiService {
     getAllBooks() {
         const objservble = this.http.get(this.apiUrl);
         objservble.subscribe((res) => {
+            // console.log(res);
             let parsedBooks = this.parsData(res);
-
             this.books = parsedBooks;;
             // console.log(this.books)
             this.allSubject.next(this.books);
@@ -45,27 +45,26 @@ export class BookApiService {
         let listOfBooks = [];
         for (let i = 0; i < 10; i++) {
             let book =  data.items[i].volumeInfo;
-            // console.log(book)
-            if (book.imageLinks == null) {
-                book = null;
-            }
-            else {
+            let bookImage = "https://childrensbooksinfo.files.wordpress.com/2008/07/childrensbook.jpg";
+            
+            if (book.imageLinks == undefined) {
+                book.imageLinks = { thumbnail: bookImage }
+            } 
                 if (book.authors == null) {
-                    book.authors = "Unknown";
+                    book.authors="Unknown";
                 }
                 if (book.publishedDate == null) {
                     book.publishedDate = "Unknown";
                 }
                 if (book.categories == null) {
                     book.categories = "Unknown";
-                }
-            }
+                } 
             const newBook = {
-                title: book.title,
+                title:book.title,
                 categories: book.categories,
                 thumbnail: book.imageLinks.thumbnail,
                 publishedDate: book.publishedDate,
-                authors: book.authors[0]
+                authors: book.authors
             }
             // console.log(newBook)
             listOfBooks.push(newBook);
@@ -99,5 +98,9 @@ export class BookApiService {
             }
         }
 
+    }
+
+    AddBook(newBook){
+        this.books.push(newBook);
     }
 }
