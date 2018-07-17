@@ -1,54 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from 'src/app/book'; 
-import { BookApiService } from 'src/app/services/book-api.service'; 
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Book } from 'src/app/book';
+import { BookApiService } from 'src/app/services/book-api.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DeleteBookComponent } from 'src/app/components/delete-book/delete-book.component';
 import { EditBookComponent } from 'src/app/components/edit-book/edit-book.component';
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css']
+    selector: 'app-book-list',
+    templateUrl: './book-list.component.html',
+    styleUrls: ['./book-list.component.css']
 })
 
 export class BookListComponent implements OnInit {
-    
+
     listOfBooks;
 
-    constructor(private BookApiService: BookApiService, public dialog: MatDialog) {}
+    constructor(private BookApiService: BookApiService, public dialog: MatDialog) { }
 
-  ngOnInit() {
-      
-          this.BookApiService.getAllBooks().subscribe((resp) => {
-              this.listOfBooks = [];
-              for (let i = 0; i < 10; i++) {
-              let arr = resp.items[i].volumeInfo;
-                  if (arr.imageLinks == null){
-                      arr=null; 
-                  } 
-                  else {
-                      if (arr.authors == null){
-                          arr.authors ="Unknown";
-                      }
-                      if (arr.publishedDate == null){
-                          arr.publishedDate = "Unknown";
-                      }
-                       if (arr.categories == null){
-                          arr.categories = "Unknown";
-                       }
-              this.listOfBooks.push(arr);
-                  }
-              }
-                  return this.listOfBooks ;
-          })
-  }
-       delete(book: Book): void {
-           let dialogRef = this.dialog.open(DeleteBookComponent, {
-               data: book 
-           });
-   }
-   
+    ngOnInit() {
+        this.BookApiService.allSubject.subscribe((data) => {
+            this.listOfBooks = data;
+        })
+
+    }
+    delete(book: Book): void {
+        console.log(book)
+        let dialogRef = this.dialog.open(DeleteBookComponent, {
+            data: book
+        });
+    }
+
     edit(book: Book): void {
         let dialogRef = this.dialog.open(EditBookComponent, {
             data: book
