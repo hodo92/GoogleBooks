@@ -50,3 +50,16 @@
 // mat - raised - button(click)="openDialog()"
 
 // this.privateBooks = this.bookApiService.getAllBooks();
+
+
+ // deleteABook(book) {
+    //     for (let i = 0; i < this.books$.length; i++) {
+    //         if (book.id === this.books$[i].id) {
+    //             let indextodelete = i
+    //             splice()
+    //         }
+    //     }
+    //     let bookIndex = this.books$.findIndex(m => m._id == book._id);
+    //     this.books$.splice(bookIndex, 1);
+
+    // }

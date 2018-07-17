@@ -18,7 +18,7 @@ export class AppComponent {
     
     ngOnInit() { }
 
-    openDialog(book: Book): void {
+    addBook(book: Book): void {
         let dialogRef = this.dialog.open(AddBookComponent, {
         });
     }

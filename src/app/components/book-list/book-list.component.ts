@@ -13,13 +13,13 @@ import { EditBookComponent } from 'src/app/components/edit-book/edit-book.compon
 })
 
 export class BookListComponent implements OnInit {
-
+    
     listOfBooks;
 
-    constructor(private BookApiService: BookApiService, private route: ActivatedRoute, public dialog: MatDialog) {}
+    constructor(private BookApiService: BookApiService, public dialog: MatDialog) {}
 
   ngOnInit() {
-      this.route.params.subscribe(params => {
+      
           this.BookApiService.getAllBooks().subscribe((resp) => {
               this.listOfBooks = [];
               for (let i = 0; i < 10; i++) {
@@ -42,19 +42,16 @@ export class BookListComponent implements OnInit {
               }
                   return this.listOfBooks ;
           })
-      });
-      
   }
-   
-       openDialog(book: Book): void {
+       delete(book: Book): void {
            let dialogRef = this.dialog.open(DeleteBookComponent, {
-               data: this.listOfBooks 
+               data: book 
            });
    }
    
-    openDialog2(book: Book): void {
+    edit(book: Book): void {
         let dialogRef = this.dialog.open(EditBookComponent, {
-            data: this.listOfBooks
+            data: book
         });
     }
 }
