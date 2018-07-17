@@ -1,11 +1,12 @@
 export class Book {
     public _id? : number;
-    public AauthorName?: string;
+    public authors?: string;
     public publishedDate?: number; 
     public title?: string;
-    public imgUrl? : string;
+    public thumbnail? : string;
     public price? : number;
     public isActive?:boolean;
+    public categories : string ;
     constructor() {}
 }
 
