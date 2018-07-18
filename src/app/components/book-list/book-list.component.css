@@ -15,7 +15,6 @@
   margin: 15px;
   padding: 5px;
   max-width: 500px;
-  /* min-height: 500px; */
   overflow: hidden;
   border-radius: 1%;
   box-shadow: 1px, 2px, 4px, 6px, rgba(0, 0, 0, 0.972);
@@ -23,7 +22,7 @@
 }
 
 
-/* check style   */
+/*  style for book-animation  */
 
 
 *, *:after, *:before {
@@ -77,7 +76,6 @@ a {
     clear: both;
     margin: 90px auto 20px;
     max-width: 1170px;
-    /* text-align: center; */
     width: 100%;
 }
 .align > li {
@@ -321,7 +319,6 @@ a {
     top: 0;
 }
 .coverDesign:after {
-    /* background-image: linear-gradient(-135deg, rgba(255, 255, 255, 0.45) 0%, transparent 100%); */
     bottom: 0;
     left: 0;
     position: absolute;
@@ -332,39 +329,7 @@ a {
 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
 }
-/* .ribbon {
-    backface-visibility: hidden;
-    background: none repeat scroll 0 0 #C0392B;
-    color: #FFFFFF;
-    display: block;
-    font-size: 0.7em;
-    height: 20px;
-    letter-spacing: 0.15em;
-    line-height: 20px;
-    position: absolute;
-    right: 1px;
-    text-align: center;
-    top: 11px;
-    transform: rotateZ(45deg) translateZ(1px);
-    width: 40px;
-    z-index: 10;
-}
-.ribbon:before, .ribbon:after {
-    border-bottom: 20px solid #C0392B;
-    border-top: 20px solid transparent;
-    height: 0;
-    position: absolute;
-    top: -20px;
-    width: 0;
-}
-.ribbon:before {
-    border-left: 20px solid transparent;
-    left: -20px;
-}
-.ribbon:after {
-    border-right: 20px solid transparent;
-    right: -20px;
-} */
+
 figcaption {
     left: 160px;
     padding-left: 40px;
@@ -416,7 +381,6 @@ figcaption {
 }
 
 .small > * {
-/* margin: 60px ; */
 background-color:#FFFBEC;
 }
 

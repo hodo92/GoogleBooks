@@ -32,10 +32,8 @@ export class BookApiService {
     getAllBooks() {
         const objservble = this.http.get(this.apiUrl);
         objservble.subscribe((res) => {
-            // console.log(res);
             let parsedBooks = this.parsData(res);
             this.books = parsedBooks;;
-            // console.log(this.books)
             this.allSubject.next(this.books);
         });
 
@@ -66,14 +64,11 @@ export class BookApiService {
                 publishedDate: book.publishedDate,
                 authors: book.authors
             }
-            // console.log(newBook)
             listOfBooks.push(newBook);
         }
-        // console.log(this.books)
         return this.books = listOfBooks;
     }
     deleteBook(book) {
-        // console.log(book)
 
         this.books.splice(this.getBookIndex(book), 1)
 
@@ -81,12 +76,8 @@ export class BookApiService {
 
 
     changeBook(currentBook, newBook) {
-        // console.log(currentBook)
-        // console.log(newBook)
         let index = this.getBookIndex(currentBook);
         this.books[index] = newBook;
-        // get index of current book ==>>>> index
-        //this.books[index].title = newBook.title;
     }
 
 

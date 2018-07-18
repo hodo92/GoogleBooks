@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//#region Modules
+
 
 // Material
 import {
@@ -23,8 +23,7 @@ import {
 
 from '@angular/material';
 
-// in memory web api
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 
 //#region Components
 import { AppComponent } from './app.component';
@@ -57,9 +56,10 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
         MatButtonModule,
         MatIconModule,
         MatCardModule,
-        HttpClientInMemoryWebApiModule,
         RouterModule.forRoot([])
     ],
+    exports: [FormsModule],
+    
     declarations: [
         AppComponent,
         AddBookComponent,
