@@ -7,14 +7,14 @@ import { Book } from '../book';
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
 
-let param = Math.floor((Math.random() * 1200) + 1000);
+// let param = Math.floor((Math.random() * 1200) + 1000);
 
 @Injectable({
     providedIn: 'root'
 })
 export class BookApiService {
 
-    public apiUrl = "https://www.googleapis.com/books/v1/volumes?q=" + param;
+    public apiUrl = "https://www.googleapis.com/books/v1/volumes?q=" + 1;
     public books: Array<Book>;
 
 
