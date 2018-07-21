@@ -1,71 +1,83 @@
 <h1 mat-dialog-title>Edit Book</h1>
 <div class="container">
-    
-    <!-- title  -->
-    <mat-form-field>
-    <input matInput [(ngModel)]='title1' name='title1' type="text" name="" id="" placeholder="title" [formControl]="titleFormControl" [errorStateMatcher]="matcher">
-    <mat-error *ngIf="titleFormControl.hasError('title') && !titleFormControl.hasError('required')">
-        Please enter a valid title
-    </mat-error>
-    <mat-error *ngIf="titleFormControl.hasError('required')">
-         title is <strong>required</strong>
-    </mat-error>
-    </mat-form-field>
-    <br>
+    <form fxFlex="60" fxFlexOrder="2" fxLayout="column" [formGroup]="bookFormGroup" >
+        <!-- title  -->
+        <mat-form-field>
+            <input matInput [(ngModel)]='title1' name='title1' type="text" name=""
+                id="" placeholder="title" formControlName="title" 
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="bookFormGroup.get('title').hasError('title')">
+                Please enter a valid title
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('title').hasError('required')">
+                title is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
 
-<!-- authors -->
-    <mat-form-field>
-    <input matInput [(ngModel)]='authors1' name="authors1" name="" id="" placeholder="authors" [formControl]="authorsFormControl" [errorStateMatcher]="matcher">
-    <mat-error *ngIf="authorsFormControl.hasError('authors') && !authorsFormControl.hasError('required')">
-        Please enter a valid authors
-    </mat-error>
-    <mat-error *ngIf="authorsFormControl.hasError('required')">
-         authors is <strong>required</strong>
-    </mat-error>
-    </mat-form-field>
-    <br>
+        <!-- authors -->
+        <mat-form-field>
+            <input matInput [(ngModel)]='authors1' name="authors1" name="" id="" formControlName="author" placeholder="authors"
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="bookFormGroup.get('author').hasError('author')">
+                Please enter a valid authors
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('author').hasError('required')">
+                authors is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
 
-<!-- date -->
-    <mat-form-field>
-    <input matInput [(ngModel)]='publishedDate1' name="publishedDate1" name="" id=""
-        placeholder="date" [formControl]="dateFormControl" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="dateFormControl.hasError('date') && !dateFormControl.hasError('required')">
-            Please enter a valid date
-        </mat-error>
-        <mat-error *ngIf="dateFormControl.hasError('required')">
-            date is <strong>required</strong>
-        </mat-error>
-    </mat-form-field>
-    <br>
+        <!-- date -->
+        <mat-form-field>
+            <input matInput [(ngModel)]='publishedDate1' name="publishedDate1" name=""
+                id="" formControlName="publishedDate1"  placeholder="date"  [errorStateMatcher]="matcher">
+            <mat-error *ngIf="bookFormGroup.get('publishedDate1').hasError('publishedDate1')">
+                Please enter a valid date
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('publishedDate1').hasError('required')">
+                date is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
 
-<!-- categories -->
-    <mat-form-field>
-    <input matInput [(ngModel)]='categories1' name="categories1" name="" id="" placeholder="category" [formControl]="categoriesFormControl" [errorStateMatcher]="matcher">
-    <mat-error *ngIf="categoriesFormControl.hasError('categories') && !categoriesFormControl.hasError('required')">
-        Please enter a valid categories
-    </mat-error>
-    <mat-error *ngIf="categoriesFormControl.hasError('required')">
-         categories is <strong>required</strong>
-    </mat-error>
-    </mat-form-field>
-    <br>
+        <!-- categories -->
+        <mat-form-field>
+            <input matInput [(ngModel)]='categories1' name="categories1" name="" id="" formControlName="categories1"
+                placeholder="category" 
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="bookFormGroup.get('categories1').hasError('categories1')">
+                Please enter a valid categories
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('categories1').hasError('required')">
+                categories is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
 
-<!-- image-url -->
-    <mat-form-field>
-    <input matInput [(ngModel)]='thumbnail' name="thumbnail" name="" id="" placeholder="image-url" [formControl]="thumbnailFormControl" [errorStateMatcher]="matcher">
-    <mat-error *ngIf="thumbnailFormControl.hasError('thumbnail') && !thumbnailFormControl.hasError('required')">
-        Please enter a valid image-url
-    </mat-error>
-    <mat-error *ngIf="thumbnailFormControl.hasError('required')">
-         image-url is <strong>required</strong>
-    </mat-error>
-    </mat-form-field>
-    <br>
-
-<!-- btn -->
+        <!-- image-url -->
+        <mat-form-field>
+            <input matInput [(ngModel)]='thumbnail' name="thumbnail" name="" id="" formControlName="thumbnail"
+                placeholder="image-url"
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="bookFormGroup.get('thumbnail').hasError('thumbnail')">
+                Please enter a valid image-url
+            </mat-error>
+            <mat-error *ngIf="bookFormGroup.get('thumbnail').hasError('required')">
+                image-url is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+    </form>
+    <!-- btn -->
     <mat-dialog-actions>
         <button mat-button mat-dialog-close class='cancel'>Cancel</button>
-        <button mat-raised-button class='save' (click)="submit()">Save</button>
+        <button mat-raised-button class='save' (click)="submit()" [disabled]="!bookFormGroup.valid" >Save</button>
     </mat-dialog-actions>
-   
+
 </div>

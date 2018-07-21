@@ -4,7 +4,7 @@ import { BookApiService } from 'src/app/services/book-api.service';
 import { Book } from 'src/app/book';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TitlePipe } from "src/app/pipes/title.pipe";
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 
@@ -15,7 +15,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
         return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
     }
 }
-
 
 @Component({
   selector: 'app-add-book',
@@ -32,16 +31,19 @@ export class AddBookComponent implements OnInit {
     public categories1;
     public thumbnail;
 
-    titleFormControl = new FormControl('', [Validators.required]);
-    authorsFormControl = new FormControl('', [Validators.required]);
-    dateFormControl = new FormControl('', [Validators.required,]);
-    categoriesFormControl = new FormControl('', [Validators.required]);
-    thumbnailFormControl = new FormControl('', [Validators.required], );
+    // create dynamic form
+    bookFormGroup = this.formBuilder.group({
+        author: ['', [Validators.required]],
+        title: ['', [Validators.required]],
+        categories1: ['', [Validators.required]],
+        publishedDate1: ['', [Validators.required]],
+        thumbnail: ['', [Validators.required]]
+    })
 
     matcher = new MyErrorStateMatcher();
 
 
-    constructor(private bookApiService: BookApiService, private titlePipe: TitlePipe,private dialogRef: MatDialogRef<AddBookComponent>, @Inject(MAT_DIALOG_DATA) private data) { }
+    constructor(private bookApiService: BookApiService, private formBuilder: FormBuilder, private titlePipe: TitlePipe,private dialogRef: MatDialogRef<AddBookComponent>, @Inject(MAT_DIALOG_DATA) private data) { }
 
   ngOnInit() {
   }
