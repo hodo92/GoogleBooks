@@ -1,6 +1,7 @@
 <h1 mat-dialog-title>Edit Book</h1>
 <div class="container">
     
+    <!-- title  -->
     <mat-form-field>
     <input matInput [(ngModel)]='title1' name='title1' type="text" name="" id="" placeholder="title" [formControl]="titleFormControl" [errorStateMatcher]="matcher">
     <mat-error *ngIf="titleFormControl.hasError('title') && !titleFormControl.hasError('required')">
@@ -12,7 +13,7 @@
     </mat-form-field>
     <br>
 
-
+<!-- authors -->
     <mat-form-field>
     <input matInput [(ngModel)]='authors1' name="authors1" name="" id="" placeholder="authors" [formControl]="authorsFormControl" [errorStateMatcher]="matcher">
     <mat-error *ngIf="authorsFormControl.hasError('authors') && !authorsFormControl.hasError('required')">
@@ -24,7 +25,7 @@
     </mat-form-field>
     <br>
 
-
+<!-- date -->
     <mat-form-field>
     <input matInput [(ngModel)]='publishedDate1' name="publishedDate1" name="" id=""
         placeholder="date" [formControl]="dateFormControl" [errorStateMatcher]="matcher">
@@ -37,7 +38,7 @@
     </mat-form-field>
     <br>
 
-
+<!-- categories -->
     <mat-form-field>
     <input matInput [(ngModel)]='categories1' name="categories1" name="" id="" placeholder="category" [formControl]="categoriesFormControl" [errorStateMatcher]="matcher">
     <mat-error *ngIf="categoriesFormControl.hasError('categories') && !categoriesFormControl.hasError('required')">
@@ -49,7 +50,7 @@
     </mat-form-field>
     <br>
 
-
+<!-- image-url -->
     <mat-form-field>
     <input matInput [(ngModel)]='thumbnail' name="thumbnail" name="" id="" placeholder="image-url" [formControl]="thumbnailFormControl" [errorStateMatcher]="matcher">
     <mat-error *ngIf="thumbnailFormControl.hasError('thumbnail') && !thumbnailFormControl.hasError('required')">
@@ -61,7 +62,7 @@
     </mat-form-field>
     <br>
 
-
+<!-- btn -->
     <mat-dialog-actions>
         <button mat-button mat-dialog-close class='cancel'>Cancel</button>
         <button mat-raised-button class='save' (click)="submit()">Save</button>

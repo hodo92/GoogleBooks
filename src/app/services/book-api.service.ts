@@ -84,7 +84,6 @@ export class BookApiService {
     getBookIndex(book) {
         for (let i = 0; i < this.books.length; i++) {
             if (this.books[i].title == book.title) {
-                console.log(i)
                 return i;
             }
         }
